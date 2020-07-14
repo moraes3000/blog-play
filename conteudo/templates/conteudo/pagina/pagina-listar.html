@@ -1,0 +1,9 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+
+{% block container %}
+
+    {% for pagina in object_list %}
+        <p><a href="{% url 'PaginaDetalhe-detail' pagina.slug %}"> {{ pagina.nome_pagina }}</a></p>
+    {% endfor %}
+{% endblock %}

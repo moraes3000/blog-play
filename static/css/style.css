@@ -1,0 +1,132 @@
+body {
+    background-image: url('../img/bg-game.png');
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+footer {
+
+    content: " ";
+    height: 10px;
+}
+
+/*.conteudo*/
+.conteudo {
+    background: white;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 12px 13px 9px rgba(0, 0, 0, .2);
+    background-color: #ffffff;
+    border: 1px solid #fafafa;
+}
+
+.titulo-principal {
+    color: #343838;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.4em;
+    line-height: 1.0em;
+    text-transform: uppercase;
+    margin-top: 15px;
+    border-bottom: 1px solid #ebebeb
+}
+
+.titulo-secundario {
+    color: #343838;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.0em;
+    text-transform: uppercase;
+    margin-top: 15px;
+    border-bottom: 1px solid #ebebeb
+}
+
+.tags-estilo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 8px;
+    margin: 0 2px 2px 0;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    background-color: #222;
+    color: #fff !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    -webkit-text-shadow: none !important;
+    -moz-text-shadow: none !important;
+    text-shadow: none !important;
+}
+.tags-ano {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 8px;
+    margin: 0 2px 2px 0;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    background-color: #222;
+    color: #fff !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    -webkit-text-shadow: none !important;
+    -moz-text-shadow: none !important;
+    text-shadow: none !important;
+}
+.tags-desenvolvido {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 8px;
+    margin: 0 2px 2px 0;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    background-color: #222;
+    color: #fff !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    -webkit-text-shadow: none !important;
+    -moz-text-shadow: none !important;
+    text-shadow: none !important;
+}
+.tags-plataforma {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 8px;
+    margin: 0 2px 2px 0;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    background-color: burlywood;
+    color: #fff !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    -webkit-text-shadow: none !important;
+    -moz-text-shadow: none !important;
+    text-shadow: none !important;
+}
+.card-body p img {
+    display: none;
+}
+
+.conteudo-game p img{
+    max-width: 100%;
+}

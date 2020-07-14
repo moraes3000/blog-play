@@ -1,0 +1,45 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-md-3 mt-3 mb-3">
+            <img src="{{ object.chave_estrangeira.thumbnail.url }}" style="max-width: 100%">
+
+
+            <h3 class="titulo-secundario"> {{ object.chave_estrangeira }}</h3>
+            <ul class="list-s">
+                <li>Plataforma:
+
+                    {% for plataforma in plataformas %}
+                        <span class="tags-plataforma"> {{ plataforma }} </span>
+                    {% endfor %}
+
+
+                </li>
+                <li>Estilo:
+                    {% for estilo_jogo in estilos_jogos %}
+                        <span class="tags-estilo">{{ estilo_jogo }}</span>
+                    {% endfor %}
+                </li>
+                <li>Ano de Lançamento:<span class="tags-ano">{{ object.chave_estrangeira.ano_lancamento }}</span></li>
+                <li>Desenvolvido:<span class="tags-desenvolvido">{{ object.chave_estrangeira.desenvolvido }}</span></li>
+
+            </ul>
+            <ul>
+                <li>Campanha</li>
+                <li>Secundária</li>
+                <li>Conquistas</li>
+                <i class="fas fa-user-friends"></i>
+            </ul>
+        </div>
+        <div class="col conteudo-game">
+            <h1 class="titulo-principal">{{ object.nome }}</h1>
+            <small class="tags">{{ object.chave_estrangeira }}</small>
+            <p>
+                {{ object.descricao | safe }}
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

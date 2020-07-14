@@ -1,0 +1,23 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS 4.5 -->
+    <link rel="stylesheet" href="{% static 'css/boostrap.min.css' %}">
+    <!-- css personalizado -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'icones/font-awesome-5-13-1-all.min.js' %}">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+{% include 'core/layout/header.html' %}

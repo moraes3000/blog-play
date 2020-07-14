@@ -1,0 +1,21 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+
+{% block container %}
+    <div class="row">
+        {% for jogo in object_list %}
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="{% url 'CapituloJogoListView' jogo.slug %}">
+                        <img src="{{ jogo.thumbnail.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ jogo.nome }}</h5>
+                            <p class="card-text">{{ jogo.descricao }}</p>
+                            <small class="text-muted">{{ jogo.criado }}</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
