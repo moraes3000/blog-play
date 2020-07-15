@@ -12,7 +12,7 @@ class JogoListView(ListView):
 
 class JogoListPlataformaView(ListView):
     model = JogoModel
-    template_name = 'detonado/jogo/jogo-lista.html'
+    template_name = 'detonado/plataforma/plataforma-listar.html'
 
     def get_queryset(self):
         slug = self.kwargs.get('slug')
@@ -22,7 +22,7 @@ class JogoListPlataformaView(ListView):
 
 class JogoListEstiloView(ListView):
     model = JogoModel
-    template_name = 'detonado/jogo/jogo-lista.html'
+    template_name = 'detonado/estilo-de-jogo/estilo-listar.html'
 
     def get_queryset(self):
         slug = self.kwargs.get('slug')
