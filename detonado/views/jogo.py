@@ -9,3 +9,22 @@ class JogoListView(ListView):
     template_name = 'detonado/jogo/jogo-lista.html'
     # ordering = '-id'
 
+
+class JogoListPlataformaView(ListView):
+    model = JogoModel
+    template_name = 'detonado/jogo/jogo-lista.html'
+
+    def get_queryset(self):
+        slug = self.kwargs.get('slug')
+        plataforma = JogoModel.objects.filter(plataforma_fk__slug=slug)
+        return plataforma
+
+
+class JogoListEstiloView(ListView):
+    model = JogoModel
+    template_name = 'detonado/jogo/jogo-lista.html'
+
+    def get_queryset(self):
+        slug = self.kwargs.get('slug')
+        estilos = JogoModel.objects.filter(estitlo_de_jogo_fk__slug=slug)
+        return estilos

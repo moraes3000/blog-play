@@ -12,14 +12,14 @@
                 <li>Plataforma:
 
                     {% for plataforma in plataformas %}
-                        <span class="tags-plataforma"> {{ plataforma }} </span>
+                       <a href="{% url 'JogoListPlataformaView' plataforma.slug %}"> <span class="tags-plataforma"> {{ plataforma }} </span></a>
                     {% endfor %}
 
 
                 </li>
                 <li>Estilo:
                     {% for estilo_jogo in estilos_jogos %}
-                        <span class="tags-estilo">{{ estilo_jogo }}</span>
+                        <a href="{% url 'JogoListEstiloView' estilo_jogo.slug %}"> <span class="tags-estilo">{{ estilo_jogo }}</span></a>
                     {% endfor %}
                 </li>
                 <li>Ano de Lançamento:<span class="tags-ano">{{ object.chave_estrangeira.ano_lancamento }}</span></li>

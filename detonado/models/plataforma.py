@@ -12,8 +12,8 @@ class PlataformaModel(models.Model):
 
     class Meta:
         ordering = ['nome']
-        verbose_name = 'Jogado em'
-        verbose_name_plural = 'jogado em'
+        verbose_name = 'plataforma'
+        verbose_name_plural = 'plataforma em'
 
     def generate_slug(self):
         from django.template.defaultfilters import slugify
