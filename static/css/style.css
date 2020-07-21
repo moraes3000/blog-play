@@ -171,6 +171,9 @@ footer {
     height: 100%;
 
 }
+.lista-pesquisa  li img{
+    width: 150px;
+}
 
 iframe {
     width: 100%;

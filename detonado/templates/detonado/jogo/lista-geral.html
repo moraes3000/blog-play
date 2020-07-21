@@ -1,0 +1,10 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+
+{% block container %}
+    <ul class="list-unstyled lista-pesquisa">
+        {% for item in object_list %}
+            <a href="#"> <li><img src="{{ item.imagem.url }}"> {{ item }}</li></a>
+        {% endfor %}
+    </ul>
+{% endblock %}
