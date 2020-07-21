@@ -146,13 +146,24 @@ footer {
     width: 100%;
     color: black;
     margin: 15px 15px 15px 0;
-}
-.conteudo-esquerda{
-    padding: 15px;
-    border: 1px solid #e8e8e8;
+    background: #ececec6b;
 }
 
-iframe{
+.conteudo-esquerda {
+    padding: 15px;
+    border: 1px solid #e8e8e8;
+    background: #ececec6b;
+
+}
+
+.conteudo-esquerda img {
+    width: 100%;
+}
+.conteudo-esquerda .lista-detalhe li{
+    margin-bottom: 10px;
+}
+
+iframe {
     width: 100%;
     height: 70vh;
 }

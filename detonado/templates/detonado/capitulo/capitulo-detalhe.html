@@ -4,34 +4,41 @@
 {% block container %}
     <div class="row">
         <div class="col-md-3 mt-3 mb-3">
-            <img src="{{ object.chave_estrangeira.thumbnail.url }}" style="max-width: 100%">
+            <div class="conteudo-esquerda">
+                <img src="{{ object.chave_estrangeira.thumbnail.url }}">
 
+                <h3 class="titulo-secundario"> {{ object.chave_estrangeira }}</h3>
 
-            <h3 class="titulo-secundario"> {{ object.chave_estrangeira }}</h3>
-            <ul class="list-s">
-                <li>Plataforma:
+                <ul class="list-unstyled lista-detalhe">
+                    <li>Plataforma:
+                        {% for plataforma in plataformas %}
+                            <a href="{% url 'JogoListPlataformaView' plataforma.slug %}"> <span
+                                    class="tags-plataforma"> {{ plataforma }} </span></a>
+                        {% endfor %}
+                    </li>
 
-                    {% for plataforma in plataformas %}
-                       <a href="{% url 'JogoListPlataformaView' plataforma.slug %}"> <span class="tags-plataforma"> {{ plataforma }} </span></a>
-                    {% endfor %}
+                    <li>Estilo:
+                        {% for estilo_jogo in estilos_jogos %}
+                            <a href="{% url 'JogoListEstiloView' estilo_jogo.slug %}"> <span
+                                    class="tags-estilo">{{ estilo_jogo }}</span></a>
+                        {% endfor %}
+                    </li>
 
+                    <li>
+                        Ano de Lançamento:<span class="tags-ano">{{ object.chave_estrangeira.ano_lancamento }}</span>
+                    </li>
+                    <li>
+                        Desenvolvido:<span class="tags-desenvolvido">{{ object.chave_estrangeira.desenvolvido }}</span>
+                    </li>
 
-                </li>
-                <li>Estilo:
-                    {% for estilo_jogo in estilos_jogos %}
-                        <a href="{% url 'JogoListEstiloView' estilo_jogo.slug %}"> <span class="tags-estilo">{{ estilo_jogo }}</span></a>
-                    {% endfor %}
-                </li>
-                <li>Ano de Lançamento:<span class="tags-ano">{{ object.chave_estrangeira.ano_lancamento }}</span></li>
-                <li>Desenvolvido:<span class="tags-desenvolvido">{{ object.chave_estrangeira.desenvolvido }}</span></li>
-
-            </ul>
-            <ul>
-                <li>Campanha</li>
-                <li>Secundária</li>
-                <li>Conquistas</li>
-                <i class="fas fa-user-friends"></i>
-            </ul>
+                </ul>
+                <ul>
+                    <li>Campanha</li>
+                    <li>Secundária</li>
+                    <li>Conquistas</li>
+                    <i class="fas fa-user-friends"></i>
+                </ul>
+            </div>
         </div>
         <div class="col conteudo-game">
             <h1 class="titulo-principal">{{ object.nome }}</h1>
