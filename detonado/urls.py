@@ -1,6 +1,7 @@
 from django.urls import path
 from detonado.views.jogo import JogoListView, JogoListPlataformaView, JogoListEstiloView
-from detonado.views.capitulo import CapituloJogoListView,CapituloDetail
+from detonado.views.capitulo import CapituloJogoListView, CapituloDetail, CapituloJogoHistoriaListView, \
+    CapituloJogoSecundariaListView, CapituloJogoConquistaListView
 from detonado.views.plataforma import PlataformaView
 
 urlpatterns = [
@@ -11,6 +12,8 @@ urlpatterns = [
     path('plataforma/<slug:slug>/', JogoListPlataformaView.as_view(), name='JogoListPlataformaView'),
     path('estilo/<slug:slug>/', JogoListEstiloView.as_view(), name='JogoListEstiloView'),
 
-
+    path('campanha/<slug:slug>/', CapituloJogoHistoriaListView.as_view(), name='CapituloJogoHistoriaListView'),
+    path('/<slug:slug>/secundaria', CapituloJogoSecundariaListView.as_view(), name='CapituloJogoSecundariaListView'),
+    path('conquista/<slug:slug>/', CapituloJogoConquistaListView.as_view(), name='CapituloJogoConquistaListView'),
 
 ]

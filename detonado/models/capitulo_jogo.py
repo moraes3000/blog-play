@@ -9,6 +9,14 @@ from django.dispatch import receiver
 from detonado.models.jogo import JogoModel
 
 class CapituloJogoModel(models.Model):
+    MODO_CHOICES = (
+        ("H", "História"),
+        ("S", "Secundária"),
+        ("C", "Conquista")
+    )
+
+
+
     nome = models.CharField(max_length=150)
     slug = models.SlugField(blank=True)
     descricao = RichTextUploadingField(u'Conteúdo', default='', blank=True, null=True)
@@ -16,6 +24,7 @@ class CapituloJogoModel(models.Model):
     criado = models.DateTimeField(default=timezone.now)
     chave_estrangeira = models.ForeignKey(JogoModel, verbose_name='Jogo ', related_name='+', default='',
                                blank=True, null=True, on_delete=models.CASCADE)
+    tipo_fase = models.CharField(max_length=1, choices=MODO_CHOICES, default='H')
 
     class Meta:
         ordering = ['nome']

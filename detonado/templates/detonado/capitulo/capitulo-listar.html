@@ -5,12 +5,20 @@
 
     <h1 class="titulo-principal">Capitulo Listar</h1>
     <div class="row">
-        {% for capitulo in object_list %}
+
+        <div class="col-12">
+            <h1>Missões  {% if titulo_header %}{{ titulo_header }}{% endif %}</h1>
+        </div>
+
+        {% for capitulo in capitulos %}
 
             <div class="col-md-4 card-lista mb-3">
                 <div class="card">
                     <a href="{% url 'CapituloDetail' capitulo.chave_estrangeira.slug capitulo.slug %}">
-                        <img src="{{ capitulo.imagem.url }}" class="img-card" alt="...">
+                        {% if  capitulo.imagem %}
+                            <img src="{{ capitulo.imagem.url }}" class="img-card" alt="...">
+
+                        {% endif %}
                     </a>
                     <div class="card-body iframe-card">
                         <a href="{% url 'CapituloDetail' capitulo.chave_estrangeira.slug capitulo.slug %}">

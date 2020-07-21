@@ -11,10 +11,54 @@ class CapituloJogoListView(ListView):
 
     # ordering = '-id'
 
-    def get_queryset(self):
+    def get_context_data(self, **kwargs):
+        context = {}
+        context = super().get_context_data()
         slug = self.kwargs.get('slug')
-        capitulos = CapituloJogoModel.objects.filter(chave_estrangeira__slug=slug)
-        return capitulos
+        context['titulo_header'] = "Gerais"
+        context['capitulos'] = CapituloJogoModel.objects.filter(chave_estrangeira__slug=slug)
+        return context
+
+
+class CapituloJogoHistoriaListView(ListView):
+    model = CapituloJogoModel
+    template_name = "detonado/capitulo/capitulo-listar.html"
+    ordering = 'nome'
+
+    def get_context_data(self, **kwargs):
+        context = {}
+        context = super().get_context_data()
+        slug = self.kwargs.get('slug')
+        context['titulo_header'] = "Modo História"
+        context['capitulos'] = CapituloJogoModel.objects.filter(chave_estrangeira__slug=slug).filter(tipo_fase="H")
+        return context
+
+
+class CapituloJogoSecundariaListView(ListView):
+    model = CapituloJogoModel
+    template_name = "detonado/capitulo/capitulo-listar.html"
+    ordering = 'nome'
+
+    def get_context_data(self, **kwargs):
+        context = {}
+        context = super().get_context_data()
+        slug = self.kwargs.get('slug')
+        context['titulo_header'] = "Secundárias"
+        context['capitulos'] = CapituloJogoModel.objects.filter(chave_estrangeira__slug=slug).filter(tipo_fase="S")
+        return context
+
+class CapituloJogoConquistaListView(ListView):
+    model = CapituloJogoModel
+    template_name = "detonado/capitulo/capitulo-listar.html"
+    ordering = 'nome'
+
+    def get_context_data(self, **kwargs):
+        context = {}
+        context = super().get_context_data()
+        slug = self.kwargs.get('slug')
+        context['titulo_header'] = "Conquista"
+        context['capitulos'] = CapituloJogoModel.objects.filter(chave_estrangeira__slug=slug).filter(tipo_fase="C")
+        return context
 
 
 class CapituloDetail(DetailView):

@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-3 mt-3 mb-3">
             <div class="conteudo-esquerda">
-            <a href="{% url 'CapituloJogoListView' object.chave_estrangeira.slug %}">
+                <a href="{% url 'CapituloJogoListView' object.chave_estrangeira.slug %}">
 
-                <img src="{{ object.chave_estrangeira.thumbnail.url }}">
-            </a>
+                    <img src="{{ object.chave_estrangeira.thumbnail.url }}">
+                </a>
 
                 <h3 class="titulo-secundario"> {{ object.chave_estrangeira }}</h3>
 
@@ -35,11 +35,25 @@
                     </li>
 
                 </ul>
-                <ul>
-                    <li>Campanha</li>
-                    <li>Secundária</li>
-                    <li>Conquistas</li>
-                    <i class="fas fa-user-friends"></i>
+                <ul class="list-unstyled lista-detalhe">
+                    <li>
+                        <a href="{% url 'CapituloJogoHistoriaListView' object.chave_estrangeira.slug %}">
+                            Campanha
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'CapituloJogoSecundariaListView' object.chave_estrangeira.slug %}">
+                            Secundária
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'CapituloJogoConquistaListView' object.chave_estrangeira.slug %}">
+                            Conquistas
+                        </a>
+                    </li>
+
+
+
                 </ul>
             </div>
         </div>
