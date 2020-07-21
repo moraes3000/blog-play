@@ -2,19 +2,23 @@
 {% load static %}
 
 {% block container %}
-    <h1 class="titulo-principal">Lista de Jogo</h1>
+    <h1 class="titulo-principal">Lista dos jogos</h1>
     <div class="row">
         {% for jogo in object_list %}
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="card">
                     <a href="{% url 'CapituloJogoListView' jogo.slug %}">
-                        <img src="{{ jogo.thumbnail.url }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ jogo.nome }}</h5>
-                            <p class="card-text">{{ jogo.descricao }}</p>
-                            <small class="text-muted">{{ jogo.criado }}</small>
-                        </div>
+                        <img src="{{ jogo.thumbnail.url }}" class="img-card" alt="{{ jogo.thumbnail }}">
                     </a>
+                    <div class="card-body">
+                        <a href="{% url 'CapituloJogoListView' jogo.slug %}">
+                            <h5 class="card-title">{{ jogo.nome }}</h5>
+                        </a>
+
+                        <p class="card-text">{{ jogo.descricao }}</p>
+                        <small class="text-muted">{{ jogo.criado }}</small>
+                    </div>
+
                 </div>
             </div>
         {% endfor %}

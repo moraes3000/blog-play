@@ -3,20 +3,24 @@
 
 {% block container %}
 
-   <h1 class="titulo-principal">Capitulo Listar</h1>
+    <h1 class="titulo-principal">Capitulo Listar</h1>
     <div class="row">
         {% for capitulo in object_list %}
-        
-            <div class="col-md-4">
+
+            <div class="col-md-4 card-lista mb-3">
                 <div class="card">
                     <a href="{% url 'CapituloDetail' capitulo.chave_estrangeira.slug capitulo.slug %}">
-                         <img src="{{ capitulo.imagem.url }}" class="card-img-top" alt="...">
-                        <div class="card-body iframe-card">
-                            <h5 class="card-title">{{ capitulo.nome }}</h5>
-                            <p class="card-text ">{{ capitulo.descricao  |safe |truncatewords:20}}</p>
-                            <small class="text-muted">{{ capitulo.criado }}</small>
-                        </div>
+                        <img src="{{ capitulo.imagem.url }}" class="img-card" alt="...">
                     </a>
+                    <div class="card-body iframe-card">
+                        <a href="{% url 'CapituloDetail' capitulo.chave_estrangeira.slug capitulo.slug %}">
+                            <h5 class="card-title">{{ capitulo.nome }}</h5>
+                        </a>
+
+                        <p class="card-text ">{{ capitulo.descricao  |safe |truncatewords:20 }}</p>
+                        <small class="text-muted">{{ capitulo.criado }}</small>
+                    </div>
+
                 </div>
             </div>
         {% endfor %}

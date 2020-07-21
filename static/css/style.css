@@ -163,6 +163,15 @@ footer {
     margin-bottom: 10px;
 }
 
+.img-card{
+    width: 100%;
+    height: 250px;
+}
+.card-lista .card-body{
+    height: 100%;
+
+}
+
 iframe {
     width: 100%;
     height: 70vh;
