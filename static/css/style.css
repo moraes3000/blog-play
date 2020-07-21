@@ -63,6 +63,7 @@ footer {
     -moz-text-shadow: none !important;
     text-shadow: none !important;
 }
+
 .tags-ano {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -83,6 +84,7 @@ footer {
     -moz-text-shadow: none !important;
     text-shadow: none !important;
 }
+
 .tags-desenvolvido {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -103,6 +105,7 @@ footer {
     -moz-text-shadow: none !important;
     text-shadow: none !important;
 }
+
 .tags-plataforma {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -123,10 +126,34 @@ footer {
     -moz-text-shadow: none !important;
     text-shadow: none !important;
 }
+
 .card-body p img {
     display: none;
 }
 
-.conteudo-game p img{
+.conteudo-game p img {
     max-width: 100%;
 }
+
+.iframe-card iframe {
+    display: none;
+
+}
+
+.conteudo-game {
+    padding: 15px;
+    border: 1px solid #e8e8e8;
+    width: 100%;
+    color: black;
+    margin: 15px 15px 15px 0;
+}
+.conteudo-esquerda{
+    padding: 15px;
+    border: 1px solid #e8e8e8;
+}
+
+iframe{
+    width: 100%;
+    height: 70vh;
+}
+
