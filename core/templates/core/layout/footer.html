@@ -1,4 +1,4 @@
-{% load static %}
+{% load static painel_de_controle_tags %}
 <footer class="container-fluid navbar-dark bg-dark">
 
 </footer>
@@ -12,6 +12,10 @@
 <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
+
+<!-- js personalizado -->
+{% js_edit as js %}
+{{ js | safe  }}
 
 </body>
 </html>

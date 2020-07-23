@@ -1,10 +1,19 @@
-{% load static %}
+{% load static painel_de_controle_tags %}
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
 
-            <a class="navbar-brand" href="/">Logo</a>
+            <a class="navbar-brand" href="/">
+                {% logo_edit as logo %}
+
+                {% if logo %}
+                    <img src="{{ logo.url }}" class="logo">
+                {% else %}
+                    Logo
+                {% endif %}
+
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-dropdown"
                     aria-controls="menu-dropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -14,15 +23,15 @@
 
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'JogoListView' %}">JOGO</a>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{% url 'JogoListView' %}">JOGO </a>
                     </li>
 
                 </ul>
 
-                <form class="form-inline my-2 my-lg-0"  method="GET" action="{% url 'PesquisaJogoListView' %}">>
+                <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'PesquisaJogoListView' %}">>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Pesquisa" aria-label="Pesquisa"
                                aria-describedby="aria-describedby=" name="q" value="{{ request.GET.q }}">
