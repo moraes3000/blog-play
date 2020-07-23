@@ -8,6 +8,11 @@ from conteudo.models import TagModel
 from detonado.models.plataforma import PlataformaModel
 from detonado.models.estilo import EstiloDeJogoModel
 
+# otimizar o tamanho da imagem
+from PIL import Image
+from django.conf import settings
+import os
+
 
 class JogoModel(models.Model):
     nome = models.CharField(max_length=250)
@@ -32,6 +37,31 @@ class JogoModel(models.Model):
     def publish(self):
         self.criado = timezone.now()
         self.save()
+
+    #reduzir o tamanho
+
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+    #     self.resize_image(self.thumbnail.name, 300)
+    #
+    # @staticmethod
+    # def resize_image(img_name, new_width):
+    #     img_path = os.path.join(settings.MEDIA_ROOT, img_name)
+    #     img = Image.open(img_path)
+    #     width, height = img.size
+    #     new_height = round((new_width * height) / width)
+    #
+    #     if width <= new_width:
+    #         img.close()
+    #         return
+    #
+    #     new_img = img.resize((new_width, new_height), Image.ANTIALIAS)
+    #     new_img.save(
+    #         img_path,
+    #         optimize=True,
+    #         quality=60
+    #     )
+    #     new_img.close()
 
     def __str__(self):
         return self.nome
