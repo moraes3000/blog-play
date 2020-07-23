@@ -28,8 +28,8 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
     #url de app
-    path('',include('conteudo.urls')),
-    path('jogo/',include('detonado.urls')),
+    path('conteudo/',include('conteudo.urls')),
+    path('',include('detonado.urls')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
