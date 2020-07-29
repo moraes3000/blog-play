@@ -14,8 +14,10 @@
 <script src="{% static 'js/popper.min.js' %}"></script>
 
 <!-- js personalizado -->
+
 {% js_edit as js %}
-{{ js | safe  }}
+{% if js %}{{ js | safe }}{% endif %}
+
 
 </body>
 </html>
