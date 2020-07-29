@@ -202,6 +202,6 @@ STATICFILES_DIRS = [
 
 # local settings
 try:
-    from vindulanext.local_settings import *
+    from BlogPlay.local_settings import *
 except ImportError:
     pass
