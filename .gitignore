@@ -5,3 +5,4 @@ venv
 *.sqlite3
 *pyc
 __pycache
+local_settings.py
