@@ -6,6 +6,7 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
+from core.utils import unique_slug_generator
 from detonado.models.jogo import JogoModel
 
 class CapituloJogoModel(models.Model):
@@ -41,11 +42,8 @@ class CapituloJogoModel(models.Model):
     # def get_absolute_url(self):
     #     return reverse('viewlistagem')
 
-    def generate_slug(self):
-        from django.template.defaultfilters import slugify
-        return slugify(self.nome)
+def capitulo_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
 
-
-@receiver(pre_save, sender=CapituloJogoModel)
-def slug_automatico(sender, instance, **kwargs):
-    instance.slug = instance.generate_slug()
+pre_save.connect(capitulo_pre_save_receiver, sender=CapituloJogoModel)
