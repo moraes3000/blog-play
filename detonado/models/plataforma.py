@@ -2,6 +2,8 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
+from core.utils import unique_slug_generator
+
 
 class PlataformaModel(models.Model):
     nome = models.CharField(max_length=250)
@@ -15,11 +17,8 @@ class PlataformaModel(models.Model):
         verbose_name = 'plataforma'
         verbose_name_plural = 'plataforma em'
 
-    def generate_slug(self):
-        from django.template.defaultfilters import slugify
-        return slugify(self.nome)
+def plataforma_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
 
-
-@receiver(pre_save, sender=PlataformaModel)
-def slug_automatico(sender, instance, **kwargs):
-    instance.slug = instance.generate_slug()
+pre_save.connect(plataforma_pre_save_receiver, sender=PlataformaModel)
