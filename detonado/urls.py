@@ -13,7 +13,7 @@ urlpatterns = [
     path('estilo/<slug:slug>/', JogoListEstiloView.as_view(), name='JogoListEstiloView'),
 
     path('campanha/<slug:slug>/', CapituloJogoHistoriaListView.as_view(), name='CapituloJogoHistoriaListView'),
-    path('/<slug:slug>/secundaria', CapituloJogoSecundariaListView.as_view(), name='CapituloJogoSecundariaListView'),
+    path('<slug:slug>/secundaria', CapituloJogoSecundariaListView.as_view(), name='CapituloJogoSecundariaListView'),
     path('conquista/<slug:slug>/', CapituloJogoConquistaListView.as_view(), name='CapituloJogoConquistaListView'),
     path('PesquisaJogoListView', PesquisaJogoListView.as_view(), name='PesquisaJogoListView'),
 
