@@ -4,7 +4,16 @@ from detonado.models.capitulo_jogo import CapituloJogoModel
 from detonado.models.estilo import EstiloDeJogoModel
 from detonado.models.plataforma import PlataformaModel
 
-admin.site.register(CapituloJogoModel)
-admin.site.register(JogoModel)
+
+class CapituloJogoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'slug', 'chave_estrangeira')
+
+
+class JogoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'slug')
+
+
+admin.site.register(CapituloJogoModel, CapituloJogoAdmin)
+admin.site.register(JogoModel,JogoAdmin)
 admin.site.register(PlataformaModel)
 admin.site.register(EstiloDeJogoModel)
