@@ -2,6 +2,8 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
+from core.utils import unique_slug_generator
+
 
 class EstiloDeJogoModel(models.Model):
     nome = models.CharField(max_length=250)
@@ -19,6 +21,8 @@ class EstiloDeJogoModel(models.Model):
         from django.template.defaultfilters import slugify
         return slugify(self.nome)
 
-@receiver(pre_save, sender=EstiloDeJogoModel)
-def slug_automatico(sender, instance, **kwargs):
-    instance.slug = instance.generate_slug()
+def estilo_jogo_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
+
+pre_save.connect(estilo_jogo_pre_save_receiver, sender=EstiloDeJogoModel)
