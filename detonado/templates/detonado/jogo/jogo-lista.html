@@ -1,5 +1,5 @@
 {% extends 'core/layout/base.html' %}
-{% load static %}
+{% load static cropping  %}
 
 {% block container %}
     <h1 class="titulo-principal">Lista dos jogos</h1>
@@ -8,7 +8,11 @@
             <div class="col-md-3 mb-3">
                 <div class="card">
                     <a href="{% url 'CapituloJogoListView' jogo.slug %}">
-                        <img src="{{ jogo.thumbnail.url }}" class="img-card" alt="{{ jogo.thumbnail }}">
+{#                        <img src="{{ jogo.thumbnail.url }}" class="img-card" alt="{{ jogo.thumbnail }}">#}
+                         <img src="{% cropped_thumbnail jogo "cropping" %}" alt="{{ jogo.cropping }}" class="img-card">
+
+
+
                     </a>
                     <div class="card-body">
                         <a href="{% url 'CapituloJogoListView' jogo.slug %}">

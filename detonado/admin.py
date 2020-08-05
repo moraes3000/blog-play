@@ -3,13 +3,13 @@ from detonado.models.jogo import JogoModel
 from detonado.models.capitulo_jogo import CapituloJogoModel
 from detonado.models.estilo import EstiloDeJogoModel
 from detonado.models.plataforma import PlataformaModel
-
+from image_cropping import ImageCroppingMixin
 
 class CapituloJogoAdmin(admin.ModelAdmin):
     list_display = ('nome', 'slug', 'chave_estrangeira')
 
 
-class JogoAdmin(admin.ModelAdmin):
+class JogoAdmin(ImageCroppingMixin, admin.ModelAdmin):
     list_display = ('nome', 'slug')
 
 

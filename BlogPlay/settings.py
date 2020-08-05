@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     #App de terceiro
     'ckeditor',
     'ckeditor_uploader',
+     'easy_thumbnails',
+    'image_cropping',
 
     #App Aplicação
     'core',
@@ -87,6 +89,18 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'mydb',
+#         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+#         'USER': 'postgres',
+#         'PASSWORD': 'bruno',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432', # 8000 is default
+#     }
+# }
 
 
 # Password validation
@@ -198,6 +212,12 @@ MEDIA_ROOT = '/media/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+from easy_thumbnails.conf import Settings as thumbnail_settings
+THUMBNAIL_PROCESSORS = (
+    'image_cropping.thumbnail_processors.crop_corners',
+) + thumbnail_settings.THUMBNAIL_PROCESSORS
+
 
 
 # local settings

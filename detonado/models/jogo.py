@@ -12,13 +12,14 @@ from detonado.models.estilo import EstiloDeJogoModel
 from PIL import Image
 from django.conf import settings
 import os
-
+from image_cropping import ImageRatioField
 
 class JogoModel(models.Model):
     nome = models.CharField(max_length=250)
     slug = models.SlugField(blank=True, unique=True)
     descricao = RichTextField(default='', blank=True, null=True)
     thumbnail = models.ImageField(upload_to='jogo/thumb', default=True, blank=True)
+    cropping = ImageRatioField('thumbnail', '250x350')
     tag_fk = models.ForeignKey(TagModel, verbose_name='Tags ', related_name='+', default='',
                                blank=True, null=True, on_delete=models.CASCADE)
 
