@@ -12,7 +12,7 @@ from detonado.models.estilo import EstiloDeJogoModel
 from PIL import Image
 from django.conf import settings
 import os
-from image_cropping import ImageRatioField
+from image_cropping import ImageCropField, ImageRatioField
 
 class JogoModel(models.Model):
     nome = models.CharField(max_length=250)
