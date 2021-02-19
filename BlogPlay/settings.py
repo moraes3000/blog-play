@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,16 +35,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #App de terceiro
+    # App de terceiro
     'ckeditor',
     'ckeditor_uploader',
-     'easy_thumbnails',
+    'easy_thumbnails',
     'image_cropping',
+    'rest_framework',
 
-    #App Aplicação
+    # App Aplicação
     'core',
     'conteudo',
     'detonado',
+
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'BlogPlay.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -121,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CKEDITOR_UPLOAD_PATH = "uploads/" # < here
+CKEDITOR_UPLOAD_PATH = "uploads/"  # < here
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -170,7 +169,7 @@ CKEDITOR_CONFIGS = {
         # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
         'tabSpaces': 4,
         'extraPlugins': ','.join([
-            'uploadimage', # the upload image feature
+            'uploadimage',  # the upload image feature
             # your extra plugins here
             'div',
             'autolink',
@@ -200,7 +199,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
@@ -214,11 +212,10 @@ STATICFILES_DIRS = [
 ]
 
 from easy_thumbnails.conf import Settings as thumbnail_settings
+
 THUMBNAIL_PROCESSORS = (
-    'image_cropping.thumbnail_processors.crop_corners',
-) + thumbnail_settings.THUMBNAIL_PROCESSORS
-
-
+                           'image_cropping.thumbnail_processors.crop_corners',
+                       ) + thumbnail_settings.THUMBNAIL_PROCESSORS
 
 # local settings
 try:

@@ -19,6 +19,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from rest_framework import routers
+
+from detonado.api.viewsets import JogoViewSetViewSet
+
+router = routers.DefaultRouter()
+
+router.register(r'jogos', JogoViewSetViewSet)
 
 
 urlpatterns = [
@@ -30,6 +37,8 @@ urlpatterns = [
     #url de app
     path('conteudo/',include('conteudo.urls')),
     path('',include('detonado.urls')),
+    path('api/', include(router.urls))
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
