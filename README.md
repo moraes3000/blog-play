@@ -1,10 +1,1 @@
-"# game" 
-"# blog-play" 
-"# blog-play" 
-"# blog-play" 
-"# blog-play" 
-"# blog-play" 
-"# blog-play" 
-"# blog-play" 
-"# blog-play" 
-"# blog-play" 
+deploy https://github.com/Gpzim98/django-heroku
