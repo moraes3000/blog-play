@@ -1,0 +1,1 @@
+web: gunicorn BlogPlay.wsgi --log-file -
