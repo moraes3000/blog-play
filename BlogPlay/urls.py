@@ -21,11 +21,15 @@ from django.conf.urls.static import static
 
 from rest_framework import routers
 
+from conteudo.api.viewsets import TagViewSetViewSet, PaginaViewSetViewSet
 from detonado.api.viewsets import JogoViewSetViewSet
 
 router = routers.DefaultRouter()
 
 router.register(r'jogos', JogoViewSetViewSet)
+router.register(r'tag', TagViewSetViewSet)
+router.register(r'pagina', PaginaViewSetViewSet)
+
 
 
 urlpatterns = [
