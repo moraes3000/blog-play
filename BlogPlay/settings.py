@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'image_cropping',
     'rest_framework',
+    'corsheaders',
 
     # App Aplicação
     'core',
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -222,6 +224,13 @@ from easy_thumbnails.conf import Settings as thumbnail_settings
 THUMBNAIL_PROCESSORS = (
                            'image_cropping.thumbnail_processors.crop_corners',
                        ) + thumbnail_settings.THUMBNAIL_PROCESSORS
+
+CORS_ALLOWED_ORIGINS = [
+    "https://blog-play.herokuapp.com",
+    "https://sub.example.com",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]
 
 # local settings
 try:
