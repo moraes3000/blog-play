@@ -12,3 +12,4 @@ class TagViewSetViewSet(ModelViewSet):
 class PaginaViewSetViewSet(ModelViewSet):
     queryset = PaginaModel.objects.all()
     serializer_class = PaginaSerializer
+    lookup_field = 'slug'

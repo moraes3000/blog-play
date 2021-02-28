@@ -12,4 +12,10 @@ class TagSerializer(ModelSerializer):
 class PaginaSerializer(ModelSerializer):
     class Meta:
         model = PaginaModel
-        fields = ('id', 'nome', 'slug', 'conteudo', 'tag_fk')
+
+        fields = ('id', 'nome', 'slug', 'conteudo', 'tag_fk', 'thumbnail', 'publicado_home', 'url')
+
+        lookup_field = 'slug'
+        extra_kwargs = {
+            'url': {'lookup_field': 'slug'}
+        }
