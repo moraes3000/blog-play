@@ -1,1 +1,1 @@
-web: gunicorn BlogPlay.wsgi --log-file -
+web: gunicorn BlogPlay.wsgi --log-file - --log-level debug
