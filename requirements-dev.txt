@@ -1,7 +1,7 @@
 asgiref==3.2.10
 dj-database-url==0.5.0
 dj-static==0.0.6
-Django==3.0.8
+Django==3.0.14
 django-appconf==1.0.4
 django-ckeditor==5.9.0
 django-image-cropping==1.4.0
